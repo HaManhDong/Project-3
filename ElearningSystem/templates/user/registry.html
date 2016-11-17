@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{#{% block script %}#}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">#}
+{#{% endblock %}#}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block main %}
+    {% if info  %}
+        <div> {{ info }}</div>
+    {% endif %}
+    <div class="page-header">
+            <a href="{% url 'post_registry_user' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Django Girls Blog</a></h1>
+     </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

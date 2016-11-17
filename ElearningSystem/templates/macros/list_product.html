@@ -1,0 +1,26 @@
+<div class="{{ class }}">
+        <div class="heading">
+            <h3>{{ header_list }}</h3>
+        </div>
+        <div class="see">
+            <p><a href="#">See all Products</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="section group">
+        {% for model_product in products %}
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href="#"><img src="static/images/{{model_product['img_main']}}" alt="" /></a>
+                <h2>{{ model_product['product']['product_name'] }}</h2>
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="rupees">{{model_product['product']['product_price']}}</span></p>
+                    </div>
+                    <div class="add-cart">
+                        <h4><a href="#">Add to Cart</a></h4>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        {% endfor %}
+</div>
